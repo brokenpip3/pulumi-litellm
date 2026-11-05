@@ -54,7 +54,3 @@ The following configuration points are available for the `litellm` provider:
 - `litellm:apiBase` (environment: `LITELLM_API_BASE`) - the base URL of the LiteLLM API
 - `litellm:apiKey` (environment: `LITELLM_API_KEY`) - the API key; set it with `pulumi config set --secret litellm:apiKey`
 - `litellm:insecureSkipVerify` (environment: `LITELLM_INSECURE_SKIP_VERIFY`) - skip TLS verification; defaults to `false`
-
-## Reference
-
-For detailed reference documentation, please visit [the Pulumi registry](https://www.pulumi.com/registry/packages/litellm/api-docs/).

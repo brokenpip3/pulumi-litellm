@@ -55,24 +55,6 @@ The following configuration points are available for the `litellm` provider:
 - `litellm:apiKey` (environment: `LITELLM_API_KEY`) - the API key; set it with `pulumi config set --secret litellm:apiKey`
 - `litellm:insecureSkipVerify` (environment: `LITELLM_INSECURE_SKIP_VERIFY`) - skip TLS verification; defaults to `false`
 
-## Development
-
-Run commands in the repository's mise environment:
-
-```bash
-mise exec -- make tfgen
-mise exec -- make provider
-mise exec -- make generate_sdks
-```
-
-If mise is supplied through Nix, use `nix shell nixpkgs#mise --command mise exec -- make tfgen`.
-This also makes `mise` available to the Makefile's nested commands.
-
-Keep `provider/cmd/pulumi-resource-litellm/bridge-metadata.json` checked in: `tfgen`
-embeds it before updating the automatic mappings. An empty `{}` is only the initial seed.
-CI files are generated from `.ci-mgmt.yaml`; update that file and run
-`mise exec -- make ci-mgmt` instead of manually replacing names in workflows.
-
 ## Reference
 
 For detailed reference documentation, please visit [the Pulumi registry](https://www.pulumi.com/registry/packages/litellm/api-docs/).
