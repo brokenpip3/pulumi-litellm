@@ -1,13 +1,13 @@
 {
-    "name": "@pulumi/xyz",
-    "version": "1.0.0-alpha.0+dev",
-    "description": "A Pulumi package for creating and managing xyz cloud resources.",
+    "name": "@pulumi/litellm",
+    "version": "0.0.1",
+    "description": "pulumi provider of the litellm TF provider github.com/BerriAI/terraform-provider-litellm",
     "keywords": [
-        "xyz",
+        "litellm",
         "category/cloud"
     ],
     "homepage": "https://www.pulumi.com",
-    "repository": "https://github.com/pulumi/pulumi-xyz",
+    "repository": "https://github.com/brokenpip3/pulumi-litellm",
     "license": "Apache-2.0",
     "scripts": {
         "build": "tsc"
@@ -21,7 +21,8 @@
     },
     "pulumi": {
         "resource": true,
-        "name": "xyz",
-        "version": "1.0.0-alpha.0+dev"
+        "name": "litellm",
+        "version": "0.0.1",
+        "server": "github://api.github.com/brokenpip3/pulumi-litellm"
     }
 }

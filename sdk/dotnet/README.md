@@ -1,1 +1,1 @@
-A Pulumi package for creating and managing xyz cloud resources.
+pulumi provider of the litellm TF provider github.com/BerriAI/terraform-provider-litellm

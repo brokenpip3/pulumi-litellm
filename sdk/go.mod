@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-xyz/sdk
+module github.com/brokenpip3/pulumi-litellm/sdk
 
 go 1.26.6
 

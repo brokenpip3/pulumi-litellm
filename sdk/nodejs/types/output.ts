@@ -4,5 +4,676 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
-import * as enums from "../types/enums";
+
+export interface GetAccessGroupsAccessGroup {
+    /**
+     * The access group name.
+     */
+    accessGroup: string;
+    /**
+     * Number of deployments tagged with this access group.
+     */
+    deploymentCount: number;
+    /**
+     * List of model names in the access group.
+     */
+    modelNames: string[];
+}
+
+export interface GetAgentsAgent {
+    /**
+     * The unique agent ID.
+     */
+    agentId: string;
+    /**
+     * Name of the agent.
+     */
+    agentName: string;
+    /**
+     * Timestamp when the agent was created.
+     */
+    createdAt: string;
+    /**
+     * User who created the agent.
+     */
+    createdBy: string;
+    /**
+     * Requests per minute limit.
+     */
+    rpmLimit: number;
+    /**
+     * Per-session requests per minute limit.
+     */
+    sessionRpmLimit: number;
+    /**
+     * Per-session tokens per minute limit.
+     */
+    sessionTpmLimit: number;
+    /**
+     * Total spend recorded for the agent.
+     */
+    spend: number;
+    /**
+     * Tokens per minute limit.
+     */
+    tpmLimit: number;
+    /**
+     * Timestamp when the agent was last updated.
+     */
+    updatedAt: string;
+    /**
+     * User who last updated the agent.
+     */
+    updatedBy: string;
+}
+
+export interface GetBudgetsBudget {
+    /**
+     * Budget reset period
+     */
+    budgetDuration: string;
+    /**
+     * The budget ID
+     */
+    budgetId: string;
+    /**
+     * Datetime when the budget is reset
+     */
+    budgetResetAt: string;
+    /**
+     * Hard budget limit in USD
+     */
+    maxBudget: number;
+    /**
+     * Maximum concurrent requests allowed for this budget
+     */
+    maxParallelRequests: number;
+    /**
+     * JSON string of per-model budget config
+     */
+    modelMaxBudget: string;
+    /**
+     * Maximum requests per minute allowed for this budget
+     */
+    rpmLimit: number;
+    /**
+     * Soft budget limit in USD that triggers alerts
+     */
+    softBudget: number;
+    /**
+     * Maximum tokens per minute allowed for this budget
+     */
+    tpmLimit: number;
+}
+
+export interface GetGuardrailsGuardrail {
+    /**
+     * Timestamp when the guardrail was created.
+     */
+    createdAt: string;
+    /**
+     * Where the guardrail is defined: `config` or `db`.
+     */
+    guardrailDefinitionLocation: string;
+    /**
+     * Unique identifier of the guardrail.
+     */
+    guardrailId: string;
+    /**
+     * Map of additional metadata for the guardrail.
+     */
+    guardrailInfo: {[key: string]: string};
+    /**
+     * Human-readable name of the guardrail.
+     */
+    guardrailName: string;
+    /**
+     * Timestamp when the guardrail was last updated.
+     */
+    updatedAt: string;
+}
+
+export interface GetKeysKey {
+    /**
+     * Whether the key is blocked.
+     */
+    blocked: boolean;
+    /**
+     * Budget reset duration.
+     */
+    budgetDuration: string;
+    /**
+     * Creation timestamp.
+     */
+    createdAt: string;
+    /**
+     * Expiry timestamp, if set.
+     */
+    expires: string;
+    /**
+     * Filter keys by key alias.
+     */
+    keyAlias: string;
+    /**
+     * Redacted display name.
+     */
+    keyName: string;
+    /**
+     * Maximum budget.
+     */
+    maxBudget: number;
+    /**
+     * Models the key can access.
+     */
+    models: string[];
+    /**
+     * Filter keys by organization ID.
+     */
+    organizationId: string;
+    /**
+     * Requests per minute limit.
+     */
+    rpmLimit: number;
+    /**
+     * Amount spent by the key.
+     */
+    spend: number;
+    /**
+     * Filter keys by team ID.
+     */
+    teamId: string;
+    /**
+     * Hashed token identifier.
+     */
+    tokenId: string;
+    /**
+     * Tokens per minute limit.
+     */
+    tpmLimit: number;
+    /**
+     * Last update timestamp.
+     */
+    updatedAt: string;
+    /**
+     * Filter keys by user ID.
+     */
+    userId: string;
+}
+
+export interface GetMcpServersMcpServer {
+    /**
+     * Alias for the MCP server.
+     */
+    alias: string;
+    /**
+     * Whether all keys can access the server.
+     */
+    allowAllKeys: boolean;
+    /**
+     * Authentication type.
+     */
+    authType: string;
+    /**
+     * Creation timestamp.
+     */
+    createdAt: string;
+    /**
+     * Description of the MCP server.
+     */
+    description: string;
+    /**
+     * Unique identifier of the MCP server.
+     */
+    serverId: string;
+    /**
+     * Name of the MCP server.
+     */
+    serverName: string;
+    /**
+     * MCP specification version.
+     */
+    specVersion: string;
+    /**
+     * Health status (`healthy`, `unhealthy`, `unknown`).
+     */
+    status: string;
+    /**
+     * Transport type (`http`, `sse`, `stdio`).
+     */
+    transport: string;
+    /**
+     * Last update timestamp.
+     */
+    updatedAt: string;
+    /**
+     * URL of the MCP server.
+     */
+    url: string;
+}
+
+export interface GetModelsModel {
+    /**
+     * Base model used for pricing and capabilities.
+     */
+    baseModel: string;
+    /**
+     * Provider for the model.
+     */
+    customLlmProvider: string;
+    /**
+     * Whether the deployment is stored in the database.
+     */
+    dbModel: boolean;
+    /**
+     * Human-readable name returned by `/v1/models`, if configured.
+     */
+    displayName: string;
+    /**
+     * LiteLLM model ID.
+     */
+    id: string;
+    /**
+     * Model mode, e.g. `chat` or `embedding`.
+     */
+    mode: string;
+    /**
+     * The underlying `litellmParams` model.
+     */
+    model: string;
+    /**
+     * API base URL, if configured.
+     */
+    modelApiBase: string;
+    /**
+     * Public model name used for routing.
+     */
+    modelName: string;
+    /**
+     * Filter models to those accessible by this team.
+     */
+    teamId: string;
+    /**
+     * Model tier (`free` or `paid`).
+     */
+    tier: string;
+}
+
+export interface GetOrganizationsOrganization {
+    /**
+     * Budget reset duration from the attached budget.
+     */
+    budgetDuration: string;
+    /**
+     * ID of the attached budget.
+     */
+    budgetId: string;
+    /**
+     * Creation timestamp.
+     */
+    createdAt: string;
+    /**
+     * Maximum budget from the attached budget.
+     */
+    maxBudget: number;
+    /**
+     * Models the organization can access.
+     */
+    models: string[];
+    /**
+     * User-friendly name of the organization.
+     */
+    organizationAlias: string;
+    /**
+     * Unique identifier of the organization.
+     */
+    organizationId: string;
+    /**
+     * Requests per minute limit from the attached budget.
+     */
+    rpmLimit: number;
+    /**
+     * Amount spent by the organization.
+     */
+    spend: number;
+    /**
+     * Tokens per minute limit from the attached budget.
+     */
+    tpmLimit: number;
+    /**
+     * Last update timestamp.
+     */
+    updatedAt: string;
+}
+
+export interface GetProjectsProject {
+    /**
+     * Whether the project is blocked from making requests
+     */
+    blocked: boolean;
+    /**
+     * Budget ID associated with this project
+     */
+    budgetId: string;
+    /**
+     * Timestamp when the project was created
+     */
+    createdAt: string;
+    /**
+     * User that created the project
+     */
+    createdBy: string;
+    /**
+     * Description of the project
+     */
+    description: string;
+    /**
+     * List of models the project can access
+     */
+    models: string[];
+    /**
+     * Human-friendly name for the project
+     */
+    projectAlias: string;
+    /**
+     * The project ID
+     */
+    projectId: string;
+    /**
+     * Current spend for the project
+     */
+    spend: number;
+    /**
+     * The team ID this project belongs to
+     */
+    teamId: string;
+    /**
+     * Timestamp when the project was last updated
+     */
+    updatedAt: string;
+    /**
+     * User that last updated the project
+     */
+    updatedBy: string;
+}
+
+export interface GetPromptsPrompt {
+    /**
+     * Timestamp when the prompt was created.
+     */
+    createdAt: string;
+    /**
+     * Filter prompts by environment (e.g. `development`, `production`).
+     */
+    environment: string;
+    /**
+     * Unique identifier of the prompt.
+     */
+    promptId: string;
+    /**
+     * The prompt integration provider.
+     */
+    promptIntegration: string;
+    /**
+     * Type of prompt: `config` or `db`.
+     */
+    promptType: string;
+    /**
+     * Timestamp when the prompt was last updated.
+     */
+    updatedAt: string;
+    /**
+     * Version number of the prompt.
+     */
+    version: number;
+}
+
+export interface GetSearchToolsSearchTool {
+    /**
+     * Timestamp when the search tool was created.
+     */
+    createdAt: string;
+    /**
+     * Whether the search tool comes from the proxy config file rather than the database.
+     */
+    isFromConfig: boolean;
+    /**
+     * The unique search tool ID.
+     */
+    searchToolId: string;
+    /**
+     * Additional metadata as a JSON object string.
+     */
+    searchToolInfo: string;
+    /**
+     * Name of the search tool.
+     */
+    searchToolName: string;
+    /**
+     * Timestamp when the search tool was last updated.
+     */
+    updatedAt: string;
+}
+
+export interface GetTagsTag {
+    /**
+     * Duration for budget reset
+     */
+    budgetDuration: string;
+    /**
+     * Budget ID associated with this tag
+     */
+    budgetId: string;
+    /**
+     * Timestamp when the tag was created
+     */
+    createdAt: string;
+    /**
+     * User that created the tag
+     */
+    createdBy: string;
+    /**
+     * Description of the tag
+     */
+    description: string;
+    /**
+     * Max budget in USD
+     */
+    maxBudget: number;
+    /**
+     * Max concurrent requests allowed
+     */
+    maxParallelRequests: number;
+    /**
+     * Model IDs this tag applies to
+     */
+    models: string[];
+    /**
+     * The tag name
+     */
+    name: string;
+    /**
+     * Max requests per minute
+     */
+    rpmLimit: number;
+    /**
+     * Soft budget in USD
+     */
+    softBudget: number;
+    /**
+     * Max tokens per minute
+     */
+    tpmLimit: number;
+    /**
+     * Timestamp when the tag was last updated
+     */
+    updatedAt: string;
+}
+
+export interface GetTeamsTeam {
+    /**
+     * Whether the team is blocked.
+     */
+    blocked: boolean;
+    /**
+     * Budget reset duration.
+     */
+    budgetDuration: string;
+    /**
+     * Creation timestamp.
+     */
+    createdAt: string;
+    /**
+     * Maximum budget for the team.
+     */
+    maxBudget: number;
+    /**
+     * Models the team can access.
+     */
+    models: string[];
+    /**
+     * Only return teams in this organization.
+     */
+    organizationId: string;
+    /**
+     * Requests per minute limit.
+     */
+    rpmLimit: number;
+    /**
+     * Amount spent by the team.
+     */
+    spend: number;
+    /**
+     * User-friendly name of the team.
+     */
+    teamAlias: string;
+    /**
+     * Unique identifier of the team.
+     */
+    teamId: string;
+    /**
+     * Tokens per minute limit.
+     */
+    tpmLimit: number;
+    /**
+     * Last update timestamp.
+     */
+    updatedAt: string;
+}
+
+export interface GetUnifiedAccessGroupsAccessGroup {
+    accessAgentIds: string[];
+    accessGroupId: string;
+    accessGroupName: string;
+    accessMcpServerIds: string[];
+    accessModelNames: string[];
+    assignedKeyIds: string[];
+    assignedTeamIds: string[];
+    createdAt: string;
+    createdBy: string;
+    description: string;
+    updatedAt: string;
+    updatedBy: string;
+}
+
+export interface GetUsersUser {
+    /**
+     * Timestamp when the user was created
+     */
+    createdAt: string;
+    /**
+     * Number of API keys owned by the user
+     */
+    keyCount: number;
+    /**
+     * Maximum budget in USD
+     */
+    maxBudget: number;
+    /**
+     * Models the user is allowed to call
+     */
+    models: string[];
+    /**
+     * Requests per minute limit
+     */
+    rpmLimit: number;
+    /**
+     * Current spend in USD
+     */
+    spend: number;
+    /**
+     * List of team IDs the user belongs to
+     */
+    teams: string[];
+    /**
+     * Tokens per minute limit
+     */
+    tpmLimit: number;
+    /**
+     * Descriptive name for the user
+     */
+    userAlias: string;
+    /**
+     * Filter users by partial email match
+     */
+    userEmail: string;
+    /**
+     * The user ID
+     */
+    userId: string;
+    /**
+     * Role of the user on the proxy
+     */
+    userRole: string;
+}
+
+export interface McpServerMcpInfo {
+    /**
+     * Description in MCP info.
+     */
+    description?: string;
+    /**
+     * Logo URL for the MCP server.
+     */
+    logoUrl?: string;
+    /**
+     * Cost information for MCP server tools
+     */
+    mcpServerCostInfo?: outputs.McpServerMcpInfoMcpServerCostInfo;
+    /**
+     * Server name in MCP info.
+     */
+    serverName?: string;
+}
+
+export interface McpServerMcpInfoMcpServerCostInfo {
+    /**
+     * Default cost per query for all tools.
+     */
+    defaultCostPerQuery?: number;
+    /**
+     * Map of specific tool names to their cost per query.
+     */
+    toolNameToCostPerQuery?: {[key: string]: number};
+}
+
+export interface OrganizationMemberAddMember {
+    role: string;
+    userEmail?: string;
+    userId?: string;
+}
+
+export interface TeamMemberAddMember {
+    /**
+     * The role of the user in the team. Must be one of: "admin" or "user".
+     */
+    role: string;
+    /**
+     * The email of the user to add to the team.
+     */
+    userEmail?: string;
+    /**
+     * The ID of the user to add to the team.
+     */
+    userId?: string;
+}
 

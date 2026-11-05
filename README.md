@@ -1,14 +1,9 @@
-# Terraform Bridge Provider Boilerplate
+# LiteLLM Resource Provider
 
-This repository is the template for authoring a Pulumi package from an existing Terraform provider as part of the guide for [authoring and publishing Pulumi packages](https://www.pulumi.com/docs/iac/packages-and-automation/pulumi-packages/authoring/).
+The LiteLLM Resource Provider bridges the [LiteLLM Terraform provider](https://github.com/BerriAI/terraform-provider-litellm)
+to manage LiteLLM models, teams, keys, and other resources.
 
-This repository is initially set up as a fictitious provider named "xyz" to demonstrate a resource, a data source and configuration derived from the [github.com/pulumi/terraform-provider-xyz provider](https://github.com/pulumi/terraform-provider-xyz).
-
-Read the [setup instructions](SETUP.md) for step-by-step instructions on how to bridge a new provider and refer to our complete docs [guide for authoring and publishing a Pulumi Package](https://www.pulumi.com/docs/iac/packages-and-automation/pulumi-packages/authoring/).
-
-# Xyz Resource Provider
-
-The Xyz Resource Provider lets you manage [Xyz](http://example.com) resources.
+The Pulumi provider repository is [brokenpip3/pulumi-litellm](https://github.com/brokenpip3/pulumi-litellm).
 
 ## Installing
 
@@ -19,13 +14,13 @@ This package is available for several languages/platforms:
 To use from JavaScript or TypeScript in Node.js, install using either `npm`:
 
 ```bash
-npm install @pulumi/xyz
+npm install @pulumi/litellm
 ```
 
 or `yarn`:
 
 ```bash
-yarn add @pulumi/xyz
+yarn add @pulumi/litellm
 ```
 
 ### Python
@@ -33,7 +28,7 @@ yarn add @pulumi/xyz
 To use from Python, install using `pip`:
 
 ```bash
-pip install pulumi_xyz
+pip install pulumi_litellm
 ```
 
 ### Go
@@ -41,7 +36,7 @@ pip install pulumi_xyz
 To use from Go, use `go get` to grab the latest version of the library:
 
 ```bash
-go get github.com/pulumi/pulumi-xyz/sdk/go/...
+go get github.com/brokenpip3/pulumi-litellm/sdk/go/...
 ```
 
 ### .NET
@@ -49,15 +44,17 @@ go get github.com/pulumi/pulumi-xyz/sdk/go/...
 To use from .NET, install using `dotnet add package`:
 
 ```bash
-dotnet add package Pulumi.Xyz
+dotnet add package Pulumi.Litellm
 ```
 
 ## Configuration
 
-The following configuration points are available for the `xyz` provider:
+The following configuration points are available for the `litellm` provider:
 
-- `xyz:region` (environment: `XYZ_REGION`) - the region in which to deploy resources
+- `litellm:apiBase` (environment: `LITELLM_API_BASE`) - the base URL of the LiteLLM API
+- `litellm:apiKey` (environment: `LITELLM_API_KEY`) - the API key; set it with `pulumi config set --secret litellm:apiKey`
+- `litellm:insecureSkipVerify` (environment: `LITELLM_INSECURE_SKIP_VERIFY`) - skip TLS verification; defaults to `false`
 
 ## Reference
 
-For detailed reference documentation, please visit [the Pulumi registry](https://www.pulumi.com/registry/packages/xyz/api-docs/).
+For detailed reference documentation, please visit [the Pulumi registry](https://www.pulumi.com/registry/packages/litellm/api-docs/).

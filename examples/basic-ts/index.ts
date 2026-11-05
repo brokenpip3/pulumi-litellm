@@ -1,6 +1,12 @@
 import * as pulumi from "@pulumi/pulumi";
-import * as xyz from "@pulumi/xyz";
+import * as litellm from "@pulumi/litellm";
 
-const resource = new xyz.Resource("Resource", { sampleAttribute: "attr" });
+const config = new pulumi.Config();
+const model = new litellm.Model("model", {
+    modelName: "gpt-4o",
+    customLlmProvider: "openai",
+    baseModel: "gpt-4o",
+    modelApiKey: config.requireSecret("openaiApiKey"),
+});
 
-export const sampleAttribute = resource.sampleAttribute;
+export const modelId = model.id;

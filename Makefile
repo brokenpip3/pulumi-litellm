@@ -7,8 +7,8 @@
 # generated Makefile. ci-mgmt never creates `sdk-hooks.mk`; it is opt-in. See
 # `sdk-hooks.mk.example` in pulumi/ci-mgmt for the contract and a worked example.
 
-PACK := xyz
-ORG := pulumi
+PACK := litellm
+ORG := brokenpip3
 PROJECT := github.com/$(ORG)/pulumi-$(PACK)
 PROVIDER_PATH := provider
 VERSION_PATH := $(PROVIDER_PATH)/pkg/version.Version
@@ -25,7 +25,7 @@ PULUMI_MISSING_DOCS_ERROR := false
 
 # Override during CI using `make [TARGET] PROVIDER_VERSION=""` or by setting a PROVIDER_VERSION environment variable
 # Local & branch builds will just used this fixed default version unless specified
-PROVIDER_VERSION ?= 1.0.0-alpha.0+dev
+PROVIDER_VERSION ?= 0.0.1
 
 # Check version doesn't start with a "v" - this is a common mistake
 ifeq ($(shell echo $(PROVIDER_VERSION) | cut -c1),v)
@@ -274,7 +274,7 @@ GOOS=$(1) GOARCH=$(2) CGO_ENABLED=0 go build -v $(PULUMI_PROVIDER_BUILD_PARALLEL
 provider: bin/$(PROVIDER)
 
 # `make provider_no_deps` builds the provider binary directly, without ensuring that
-# `cmd/pulumi-resource-xyz/schema.json` is valid and up to date.
+# `cmd/pulumi-resource-litellm/schema.json` is valid and up to date.
 # To create a release ready binary, you should use `make provider`.
 provider_no_deps:
 	$(call build_provider_cmd,$(shell go env GOOS),$(shell go env GOARCH),$(WORKING_DIR)/bin/$(PROVIDER))

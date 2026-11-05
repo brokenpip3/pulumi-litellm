@@ -1,0 +1,6 @@
+{
+  "resource": true,
+  "name": "litellm",
+  "version": "0.0.1",
+  "server": "github://api.github.com/brokenpip3/pulumi-litellm"
+}

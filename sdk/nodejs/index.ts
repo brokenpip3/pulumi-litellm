@@ -5,28 +5,306 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export { GetDataSourceArgs, GetDataSourceResult, GetDataSourceOutputArgs } from "./getDataSource";
-export const getDataSource: typeof import("./getDataSource").getDataSource = null as any;
-export const getDataSourceOutput: typeof import("./getDataSource").getDataSourceOutput = null as any;
-utilities.lazyLoad(exports, ["getDataSource","getDataSourceOutput"], () => require("./getDataSource"));
+export { AccessGroupArgs, AccessGroupState } from "./accessGroup";
+export type AccessGroup = import("./accessGroup").AccessGroup;
+export const AccessGroup: typeof import("./accessGroup").AccessGroup = null as any;
+utilities.lazyLoad(exports, ["AccessGroup"], () => require("./accessGroup"));
+
+export { AgentArgs, AgentState } from "./agent";
+export type Agent = import("./agent").Agent;
+export const Agent: typeof import("./agent").Agent = null as any;
+utilities.lazyLoad(exports, ["Agent"], () => require("./agent"));
+
+export { BudgetArgs, BudgetState } from "./budget";
+export type Budget = import("./budget").Budget;
+export const Budget: typeof import("./budget").Budget = null as any;
+utilities.lazyLoad(exports, ["Budget"], () => require("./budget"));
+
+export { CredentialArgs, CredentialState } from "./credential";
+export type Credential = import("./credential").Credential;
+export const Credential: typeof import("./credential").Credential = null as any;
+utilities.lazyLoad(exports, ["Credential"], () => require("./credential"));
+
+export { FallbackArgs, FallbackState } from "./fallback";
+export type Fallback = import("./fallback").Fallback;
+export const Fallback: typeof import("./fallback").Fallback = null as any;
+utilities.lazyLoad(exports, ["Fallback"], () => require("./fallback"));
+
+export { GetAccessGroupArgs, GetAccessGroupResult, GetAccessGroupOutputArgs } from "./getAccessGroup";
+export const getAccessGroup: typeof import("./getAccessGroup").getAccessGroup = null as any;
+export const getAccessGroupOutput: typeof import("./getAccessGroup").getAccessGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getAccessGroup","getAccessGroupOutput"], () => require("./getAccessGroup"));
+
+export { GetAccessGroupsResult } from "./getAccessGroups";
+export const getAccessGroups: typeof import("./getAccessGroups").getAccessGroups = null as any;
+export const getAccessGroupsOutput: typeof import("./getAccessGroups").getAccessGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getAccessGroups","getAccessGroupsOutput"], () => require("./getAccessGroups"));
+
+export { GetAgentArgs, GetAgentResult, GetAgentOutputArgs } from "./getAgent";
+export const getAgent: typeof import("./getAgent").getAgent = null as any;
+export const getAgentOutput: typeof import("./getAgent").getAgentOutput = null as any;
+utilities.lazyLoad(exports, ["getAgent","getAgentOutput"], () => require("./getAgent"));
+
+export { GetAgentsArgs, GetAgentsResult, GetAgentsOutputArgs } from "./getAgents";
+export const getAgents: typeof import("./getAgents").getAgents = null as any;
+export const getAgentsOutput: typeof import("./getAgents").getAgentsOutput = null as any;
+utilities.lazyLoad(exports, ["getAgents","getAgentsOutput"], () => require("./getAgents"));
+
+export { GetBudgetArgs, GetBudgetResult, GetBudgetOutputArgs } from "./getBudget";
+export const getBudget: typeof import("./getBudget").getBudget = null as any;
+export const getBudgetOutput: typeof import("./getBudget").getBudgetOutput = null as any;
+utilities.lazyLoad(exports, ["getBudget","getBudgetOutput"], () => require("./getBudget"));
+
+export { GetBudgetsResult } from "./getBudgets";
+export const getBudgets: typeof import("./getBudgets").getBudgets = null as any;
+export const getBudgetsOutput: typeof import("./getBudgets").getBudgetsOutput = null as any;
+utilities.lazyLoad(exports, ["getBudgets","getBudgetsOutput"], () => require("./getBudgets"));
+
+export { GetCredentialArgs, GetCredentialResult, GetCredentialOutputArgs } from "./getCredential";
+export const getCredential: typeof import("./getCredential").getCredential = null as any;
+export const getCredentialOutput: typeof import("./getCredential").getCredentialOutput = null as any;
+utilities.lazyLoad(exports, ["getCredential","getCredentialOutput"], () => require("./getCredential"));
+
+export { GetFallbackArgs, GetFallbackResult, GetFallbackOutputArgs } from "./getFallback";
+export const getFallback: typeof import("./getFallback").getFallback = null as any;
+export const getFallbackOutput: typeof import("./getFallback").getFallbackOutput = null as any;
+utilities.lazyLoad(exports, ["getFallback","getFallbackOutput"], () => require("./getFallback"));
+
+export { GetGuardrailArgs, GetGuardrailResult, GetGuardrailOutputArgs } from "./getGuardrail";
+export const getGuardrail: typeof import("./getGuardrail").getGuardrail = null as any;
+export const getGuardrailOutput: typeof import("./getGuardrail").getGuardrailOutput = null as any;
+utilities.lazyLoad(exports, ["getGuardrail","getGuardrailOutput"], () => require("./getGuardrail"));
+
+export { GetGuardrailsResult } from "./getGuardrails";
+export const getGuardrails: typeof import("./getGuardrails").getGuardrails = null as any;
+export const getGuardrailsOutput: typeof import("./getGuardrails").getGuardrailsOutput = null as any;
+utilities.lazyLoad(exports, ["getGuardrails","getGuardrailsOutput"], () => require("./getGuardrails"));
+
+export { GetKeyArgs, GetKeyResult, GetKeyOutputArgs } from "./getKey";
+export const getKey: typeof import("./getKey").getKey = null as any;
+export const getKeyOutput: typeof import("./getKey").getKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getKey","getKeyOutput"], () => require("./getKey"));
+
+export { GetKeysArgs, GetKeysResult, GetKeysOutputArgs } from "./getKeys";
+export const getKeys: typeof import("./getKeys").getKeys = null as any;
+export const getKeysOutput: typeof import("./getKeys").getKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getKeys","getKeysOutput"], () => require("./getKeys"));
+
+export { GetMcpServerArgs, GetMcpServerResult, GetMcpServerOutputArgs } from "./getMcpServer";
+export const getMcpServer: typeof import("./getMcpServer").getMcpServer = null as any;
+export const getMcpServerOutput: typeof import("./getMcpServer").getMcpServerOutput = null as any;
+utilities.lazyLoad(exports, ["getMcpServer","getMcpServerOutput"], () => require("./getMcpServer"));
+
+export { GetMcpServersArgs, GetMcpServersResult, GetMcpServersOutputArgs } from "./getMcpServers";
+export const getMcpServers: typeof import("./getMcpServers").getMcpServers = null as any;
+export const getMcpServersOutput: typeof import("./getMcpServers").getMcpServersOutput = null as any;
+utilities.lazyLoad(exports, ["getMcpServers","getMcpServersOutput"], () => require("./getMcpServers"));
+
+export { GetModelArgs, GetModelResult, GetModelOutputArgs } from "./getModel";
+export const getModel: typeof import("./getModel").getModel = null as any;
+export const getModelOutput: typeof import("./getModel").getModelOutput = null as any;
+utilities.lazyLoad(exports, ["getModel","getModelOutput"], () => require("./getModel"));
+
+export { GetModelsArgs, GetModelsResult, GetModelsOutputArgs } from "./getModels";
+export const getModels: typeof import("./getModels").getModels = null as any;
+export const getModelsOutput: typeof import("./getModels").getModelsOutput = null as any;
+utilities.lazyLoad(exports, ["getModels","getModelsOutput"], () => require("./getModels"));
+
+export { GetOrganizationArgs, GetOrganizationResult, GetOrganizationOutputArgs } from "./getOrganization";
+export const getOrganization: typeof import("./getOrganization").getOrganization = null as any;
+export const getOrganizationOutput: typeof import("./getOrganization").getOrganizationOutput = null as any;
+utilities.lazyLoad(exports, ["getOrganization","getOrganizationOutput"], () => require("./getOrganization"));
+
+export { GetOrganizationsArgs, GetOrganizationsResult, GetOrganizationsOutputArgs } from "./getOrganizations";
+export const getOrganizations: typeof import("./getOrganizations").getOrganizations = null as any;
+export const getOrganizationsOutput: typeof import("./getOrganizations").getOrganizationsOutput = null as any;
+utilities.lazyLoad(exports, ["getOrganizations","getOrganizationsOutput"], () => require("./getOrganizations"));
+
+export { GetProjectArgs, GetProjectResult, GetProjectOutputArgs } from "./getProject";
+export const getProject: typeof import("./getProject").getProject = null as any;
+export const getProjectOutput: typeof import("./getProject").getProjectOutput = null as any;
+utilities.lazyLoad(exports, ["getProject","getProjectOutput"], () => require("./getProject"));
+
+export { GetProjectsResult } from "./getProjects";
+export const getProjects: typeof import("./getProjects").getProjects = null as any;
+export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
+
+export { GetPromptArgs, GetPromptResult, GetPromptOutputArgs } from "./getPrompt";
+export const getPrompt: typeof import("./getPrompt").getPrompt = null as any;
+export const getPromptOutput: typeof import("./getPrompt").getPromptOutput = null as any;
+utilities.lazyLoad(exports, ["getPrompt","getPromptOutput"], () => require("./getPrompt"));
+
+export { GetPromptsArgs, GetPromptsResult, GetPromptsOutputArgs } from "./getPrompts";
+export const getPrompts: typeof import("./getPrompts").getPrompts = null as any;
+export const getPromptsOutput: typeof import("./getPrompts").getPromptsOutput = null as any;
+utilities.lazyLoad(exports, ["getPrompts","getPromptsOutput"], () => require("./getPrompts"));
+
+export { GetSearchToolArgs, GetSearchToolResult, GetSearchToolOutputArgs } from "./getSearchTool";
+export const getSearchTool: typeof import("./getSearchTool").getSearchTool = null as any;
+export const getSearchToolOutput: typeof import("./getSearchTool").getSearchToolOutput = null as any;
+utilities.lazyLoad(exports, ["getSearchTool","getSearchToolOutput"], () => require("./getSearchTool"));
+
+export { GetSearchToolsResult } from "./getSearchTools";
+export const getSearchTools: typeof import("./getSearchTools").getSearchTools = null as any;
+export const getSearchToolsOutput: typeof import("./getSearchTools").getSearchToolsOutput = null as any;
+utilities.lazyLoad(exports, ["getSearchTools","getSearchToolsOutput"], () => require("./getSearchTools"));
+
+export { GetTagArgs, GetTagResult, GetTagOutputArgs } from "./getTag";
+export const getTag: typeof import("./getTag").getTag = null as any;
+export const getTagOutput: typeof import("./getTag").getTagOutput = null as any;
+utilities.lazyLoad(exports, ["getTag","getTagOutput"], () => require("./getTag"));
+
+export { GetTagsArgs, GetTagsResult, GetTagsOutputArgs } from "./getTags";
+export const getTags: typeof import("./getTags").getTags = null as any;
+export const getTagsOutput: typeof import("./getTags").getTagsOutput = null as any;
+utilities.lazyLoad(exports, ["getTags","getTagsOutput"], () => require("./getTags"));
+
+export { GetTeamArgs, GetTeamResult, GetTeamOutputArgs } from "./getTeam";
+export const getTeam: typeof import("./getTeam").getTeam = null as any;
+export const getTeamOutput: typeof import("./getTeam").getTeamOutput = null as any;
+utilities.lazyLoad(exports, ["getTeam","getTeamOutput"], () => require("./getTeam"));
+
+export { GetTeamsArgs, GetTeamsResult, GetTeamsOutputArgs } from "./getTeams";
+export const getTeams: typeof import("./getTeams").getTeams = null as any;
+export const getTeamsOutput: typeof import("./getTeams").getTeamsOutput = null as any;
+utilities.lazyLoad(exports, ["getTeams","getTeamsOutput"], () => require("./getTeams"));
+
+export { GetUnifiedAccessGroupArgs, GetUnifiedAccessGroupResult, GetUnifiedAccessGroupOutputArgs } from "./getUnifiedAccessGroup";
+export const getUnifiedAccessGroup: typeof import("./getUnifiedAccessGroup").getUnifiedAccessGroup = null as any;
+export const getUnifiedAccessGroupOutput: typeof import("./getUnifiedAccessGroup").getUnifiedAccessGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getUnifiedAccessGroup","getUnifiedAccessGroupOutput"], () => require("./getUnifiedAccessGroup"));
+
+export { GetUnifiedAccessGroupsResult } from "./getUnifiedAccessGroups";
+export const getUnifiedAccessGroups: typeof import("./getUnifiedAccessGroups").getUnifiedAccessGroups = null as any;
+export const getUnifiedAccessGroupsOutput: typeof import("./getUnifiedAccessGroups").getUnifiedAccessGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getUnifiedAccessGroups","getUnifiedAccessGroupsOutput"], () => require("./getUnifiedAccessGroups"));
+
+export { GetUserArgs, GetUserResult, GetUserOutputArgs } from "./getUser";
+export const getUser: typeof import("./getUser").getUser = null as any;
+export const getUserOutput: typeof import("./getUser").getUserOutput = null as any;
+utilities.lazyLoad(exports, ["getUser","getUserOutput"], () => require("./getUser"));
+
+export { GetUsersArgs, GetUsersResult, GetUsersOutputArgs } from "./getUsers";
+export const getUsers: typeof import("./getUsers").getUsers = null as any;
+export const getUsersOutput: typeof import("./getUsers").getUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getUsers","getUsersOutput"], () => require("./getUsers"));
+
+export { GetVectorStoreArgs, GetVectorStoreResult, GetVectorStoreOutputArgs } from "./getVectorStore";
+export const getVectorStore: typeof import("./getVectorStore").getVectorStore = null as any;
+export const getVectorStoreOutput: typeof import("./getVectorStore").getVectorStoreOutput = null as any;
+utilities.lazyLoad(exports, ["getVectorStore","getVectorStoreOutput"], () => require("./getVectorStore"));
+
+export { GuardrailArgs, GuardrailState } from "./guardrail";
+export type Guardrail = import("./guardrail").Guardrail;
+export const Guardrail: typeof import("./guardrail").Guardrail = null as any;
+utilities.lazyLoad(exports, ["Guardrail"], () => require("./guardrail"));
+
+export { JwtKeyMappingArgs, JwtKeyMappingState } from "./jwtKeyMapping";
+export type JwtKeyMapping = import("./jwtKeyMapping").JwtKeyMapping;
+export const JwtKeyMapping: typeof import("./jwtKeyMapping").JwtKeyMapping = null as any;
+utilities.lazyLoad(exports, ["JwtKeyMapping"], () => require("./jwtKeyMapping"));
+
+export { KeyArgs, KeyState } from "./key";
+export type Key = import("./key").Key;
+export const Key: typeof import("./key").Key = null as any;
+utilities.lazyLoad(exports, ["Key"], () => require("./key"));
+
+export { KeyBlockArgs, KeyBlockState } from "./keyBlock";
+export type KeyBlock = import("./keyBlock").KeyBlock;
+export const KeyBlock: typeof import("./keyBlock").KeyBlock = null as any;
+utilities.lazyLoad(exports, ["KeyBlock"], () => require("./keyBlock"));
+
+export { McpServerArgs, McpServerState } from "./mcpServer";
+export type McpServer = import("./mcpServer").McpServer;
+export const McpServer: typeof import("./mcpServer").McpServer = null as any;
+utilities.lazyLoad(exports, ["McpServer"], () => require("./mcpServer"));
+
+export { ModelArgs, ModelState } from "./model";
+export type Model = import("./model").Model;
+export const Model: typeof import("./model").Model = null as any;
+utilities.lazyLoad(exports, ["Model"], () => require("./model"));
+
+export { OrganizationArgs, OrganizationState } from "./organization";
+export type Organization = import("./organization").Organization;
+export const Organization: typeof import("./organization").Organization = null as any;
+utilities.lazyLoad(exports, ["Organization"], () => require("./organization"));
+
+export { OrganizationMemberArgs, OrganizationMemberState } from "./organizationMember";
+export type OrganizationMember = import("./organizationMember").OrganizationMember;
+export const OrganizationMember: typeof import("./organizationMember").OrganizationMember = null as any;
+utilities.lazyLoad(exports, ["OrganizationMember"], () => require("./organizationMember"));
+
+export { OrganizationMemberAddArgs, OrganizationMemberAddState } from "./organizationMemberAdd";
+export type OrganizationMemberAdd = import("./organizationMemberAdd").OrganizationMemberAdd;
+export const OrganizationMemberAdd: typeof import("./organizationMemberAdd").OrganizationMemberAdd = null as any;
+utilities.lazyLoad(exports, ["OrganizationMemberAdd"], () => require("./organizationMemberAdd"));
+
+export { ProjectArgs, ProjectState } from "./project";
+export type Project = import("./project").Project;
+export const Project: typeof import("./project").Project = null as any;
+utilities.lazyLoad(exports, ["Project"], () => require("./project"));
+
+export { PromptArgs, PromptState } from "./prompt";
+export type Prompt = import("./prompt").Prompt;
+export const Prompt: typeof import("./prompt").Prompt = null as any;
+utilities.lazyLoad(exports, ["Prompt"], () => require("./prompt"));
 
 export * from "./provider";
 import { Provider } from "./provider";
 
-export { ResourceArgs, ResourceState } from "./resource";
-export type Resource = import("./resource").Resource;
-export const Resource: typeof import("./resource").Resource = null as any;
-utilities.lazyLoad(exports, ["Resource"], () => require("./resource"));
+export { SearchToolArgs, SearchToolState } from "./searchTool";
+export type SearchTool = import("./searchTool").SearchTool;
+export const SearchTool: typeof import("./searchTool").SearchTool = null as any;
+utilities.lazyLoad(exports, ["SearchTool"], () => require("./searchTool"));
+
+export { TagArgs, TagState } from "./tag";
+export type Tag = import("./tag").Tag;
+export const Tag: typeof import("./tag").Tag = null as any;
+utilities.lazyLoad(exports, ["Tag"], () => require("./tag"));
+
+export { TeamArgs, TeamState } from "./team";
+export type Team = import("./team").Team;
+export const Team: typeof import("./team").Team = null as any;
+utilities.lazyLoad(exports, ["Team"], () => require("./team"));
+
+export { TeamBlockArgs, TeamBlockState } from "./teamBlock";
+export type TeamBlock = import("./teamBlock").TeamBlock;
+export const TeamBlock: typeof import("./teamBlock").TeamBlock = null as any;
+utilities.lazyLoad(exports, ["TeamBlock"], () => require("./teamBlock"));
+
+export { TeamMemberArgs, TeamMemberState } from "./teamMember";
+export type TeamMember = import("./teamMember").TeamMember;
+export const TeamMember: typeof import("./teamMember").TeamMember = null as any;
+utilities.lazyLoad(exports, ["TeamMember"], () => require("./teamMember"));
+
+export { TeamMemberAddArgs, TeamMemberAddState } from "./teamMemberAdd";
+export type TeamMemberAdd = import("./teamMemberAdd").TeamMemberAdd;
+export const TeamMemberAdd: typeof import("./teamMemberAdd").TeamMemberAdd = null as any;
+utilities.lazyLoad(exports, ["TeamMemberAdd"], () => require("./teamMemberAdd"));
+
+export { UnifiedAccessGroupArgs, UnifiedAccessGroupState } from "./unifiedAccessGroup";
+export type UnifiedAccessGroup = import("./unifiedAccessGroup").UnifiedAccessGroup;
+export const UnifiedAccessGroup: typeof import("./unifiedAccessGroup").UnifiedAccessGroup = null as any;
+utilities.lazyLoad(exports, ["UnifiedAccessGroup"], () => require("./unifiedAccessGroup"));
+
+export { UserArgs, UserState } from "./user";
+export type User = import("./user").User;
+export const User: typeof import("./user").User = null as any;
+utilities.lazyLoad(exports, ["User"], () => require("./user"));
+
+export { VectorStoreArgs, VectorStoreState } from "./vectorStore";
+export type VectorStore = import("./vectorStore").VectorStore;
+export const VectorStore: typeof import("./vectorStore").VectorStore = null as any;
+utilities.lazyLoad(exports, ["VectorStore"], () => require("./vectorStore"));
 
 
 // Export sub-modules:
 import * as config from "./config";
-import * as region from "./region";
 import * as types from "./types";
 
 export {
     config,
-    region,
     types,
 };
 
@@ -34,18 +312,90 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
-            case "xyz:index/resource:Resource":
-                return new Resource(name, <any>undefined, { urn })
+            case "litellm:index/accessGroup:AccessGroup":
+                return new AccessGroup(name, <any>undefined, { urn })
+            case "litellm:index/agent:Agent":
+                return new Agent(name, <any>undefined, { urn })
+            case "litellm:index/budget:Budget":
+                return new Budget(name, <any>undefined, { urn })
+            case "litellm:index/credential:Credential":
+                return new Credential(name, <any>undefined, { urn })
+            case "litellm:index/fallback:Fallback":
+                return new Fallback(name, <any>undefined, { urn })
+            case "litellm:index/guardrail:Guardrail":
+                return new Guardrail(name, <any>undefined, { urn })
+            case "litellm:index/jwtKeyMapping:JwtKeyMapping":
+                return new JwtKeyMapping(name, <any>undefined, { urn })
+            case "litellm:index/key:Key":
+                return new Key(name, <any>undefined, { urn })
+            case "litellm:index/keyBlock:KeyBlock":
+                return new KeyBlock(name, <any>undefined, { urn })
+            case "litellm:index/mcpServer:McpServer":
+                return new McpServer(name, <any>undefined, { urn })
+            case "litellm:index/model:Model":
+                return new Model(name, <any>undefined, { urn })
+            case "litellm:index/organization:Organization":
+                return new Organization(name, <any>undefined, { urn })
+            case "litellm:index/organizationMember:OrganizationMember":
+                return new OrganizationMember(name, <any>undefined, { urn })
+            case "litellm:index/organizationMemberAdd:OrganizationMemberAdd":
+                return new OrganizationMemberAdd(name, <any>undefined, { urn })
+            case "litellm:index/project:Project":
+                return new Project(name, <any>undefined, { urn })
+            case "litellm:index/prompt:Prompt":
+                return new Prompt(name, <any>undefined, { urn })
+            case "litellm:index/searchTool:SearchTool":
+                return new SearchTool(name, <any>undefined, { urn })
+            case "litellm:index/tag:Tag":
+                return new Tag(name, <any>undefined, { urn })
+            case "litellm:index/team:Team":
+                return new Team(name, <any>undefined, { urn })
+            case "litellm:index/teamBlock:TeamBlock":
+                return new TeamBlock(name, <any>undefined, { urn })
+            case "litellm:index/teamMember:TeamMember":
+                return new TeamMember(name, <any>undefined, { urn })
+            case "litellm:index/teamMemberAdd:TeamMemberAdd":
+                return new TeamMemberAdd(name, <any>undefined, { urn })
+            case "litellm:index/unifiedAccessGroup:UnifiedAccessGroup":
+                return new UnifiedAccessGroup(name, <any>undefined, { urn })
+            case "litellm:index/user:User":
+                return new User(name, <any>undefined, { urn })
+            case "litellm:index/vectorStore:VectorStore":
+                return new VectorStore(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
-pulumi.runtime.registerResourceModule("xyz", "index/resource", _module)
-pulumi.runtime.registerResourcePackage("xyz", {
+pulumi.runtime.registerResourceModule("litellm", "index/accessGroup", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/agent", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/budget", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/credential", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/fallback", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/guardrail", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/jwtKeyMapping", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/key", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/keyBlock", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/mcpServer", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/model", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/organization", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/organizationMember", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/organizationMemberAdd", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/project", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/prompt", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/searchTool", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/tag", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/team", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/teamBlock", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/teamMember", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/teamMemberAdd", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/unifiedAccessGroup", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/user", _module)
+pulumi.runtime.registerResourceModule("litellm", "index/vectorStore", _module)
+pulumi.runtime.registerResourcePackage("litellm", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {
-        if (type !== "pulumi:providers:xyz") {
+        if (type !== "pulumi:providers:litellm") {
             throw new Error(`unknown provider type ${type}`);
         }
         return new Provider(name, <any>undefined, { urn });

@@ -426,8 +426,6 @@ github.com/hashicorp/terraform-plugin-sdk/v2 v2.40.1 h1:2yPUd7esMOpuTaG3y1iEla1i
 github.com/hashicorp/terraform-plugin-sdk/v2 v2.40.1/go.mod h1:sq8qsxh+PwdvTQFcd17kfCoBgQo46ADNMvCpKE7t/gY=
 github.com/hashicorp/terraform-plugin-test v1.2.0/go.mod h1:QIJHYz8j+xJtdtLrFTlzQVC0ocr3rf/OjIpgZLK56Hs=
 github.com/hashicorp/terraform-plugin-test/v2 v2.1.1/go.mod h1:HaW2G5cDTVyiEKt7PHC85YSM5BwvYl/rIko1g8Lg7qE=
-github.com/hashicorp/terraform-plugin-testing v1.11.0 h1:MeDT5W3YHbONJt2aPQyaBsgQeAIckwPX41EUHXEn29A=
-github.com/hashicorp/terraform-plugin-testing v1.11.0/go.mod h1:WNAHQ3DcgV/0J+B15WTE6hDvxcUdkPPpnB1FR3M910U=
 github.com/hashicorp/terraform-registry-address v0.4.0 h1:S1yCGomj30Sao4l5BMPjTGZmCNzuv7/GDTDX99E9gTk=
 github.com/hashicorp/terraform-registry-address v0.4.0/go.mod h1:LRS1Ay0+mAiRkUyltGT+UHWkIqTFvigGn/LbMshfflE=
 github.com/hashicorp/terraform-svchost v0.0.0-20191011084731-65d371908596/go.mod h1:kNDNcF7sN4DocDLBkQYz73HGKwN1ANB1blq4lIYLYvg=
@@ -622,8 +620,6 @@ github.com/pulumi/pulumi/sdk/v3 v3.274.0 h1:fmXISTS5nm4xhxjUGkDEvIAVT0T1xdiVBGo6
 github.com/pulumi/pulumi/sdk/v3 v3.274.0/go.mod h1:OOGpSXKEdPGkwN/iXJf7x40KRLbjINKP5E3OiR0dtes=
 github.com/pulumi/terraform-diff-reader v0.0.2 h1:kTE4nEXU3/SYXESvAIem+wyHMI3abqkI3OhJ0G04LLI=
 github.com/pulumi/terraform-diff-reader v0.0.2/go.mod h1:sZ9FUzGO+yM41hsQHs/yIcj/Y993qMdBxBU5mpDmAfQ=
-github.com/pulumi/terraform-provider-xyz v0.0.3 h1:2nQdrwL/w4DcC66qs+UB6aIno8aLWTnE5Rp0l3PtgPg=
-github.com/pulumi/terraform-provider-xyz v0.0.3/go.mod h1:yD5Smp1kibeVU6BFhdBCLeeCA09r5+pFAHAEBbCCyS0=
 github.com/rhysd/go-fakeio v1.0.0 h1:+TjiKCOs32dONY7DaoVz/VPOdvRkPfBkEyUDIpM8FQY=
 github.com/rhysd/go-fakeio v1.0.0/go.mod h1:joYxF906trVwp2JLrE4jlN7A0z6wrz8O6o1UjarbFzE=
 github.com/rivo/uniseg v0.4.7 h1:WUdvkW8uEhrYfLC4ZzdpI2ztxP1I582+49Oc5Mq64VQ=

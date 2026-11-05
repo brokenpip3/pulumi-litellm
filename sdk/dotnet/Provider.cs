@@ -7,22 +7,28 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Pulumi.Xyz
+namespace Pulumi.Litellm
 {
     /// <summary>
-    /// The provider type for the xyz package. By default, resources use package-wide configuration
+    /// The provider type for the litellm package. By default, resources use package-wide configuration
     /// settings, however an explicit `Provider` instance may be created and passed during resource
     /// construction to achieve fine-grained programmatic control over provider settings. See the
     /// [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
     /// </summary>
-    [XyzResourceType("pulumi:providers:xyz")]
+    [LitellmResourceType("pulumi:providers:litellm")]
     public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
-        /// A region which should be used.
+        /// The base URL of the LiteLLM API
         /// </summary>
-        [Output("region")]
-        public Output<string?> Region { get; private set; } = null!;
+        [Output("apiBase")]
+        public Output<string?> ApiBase { get; private set; } = null!;
+
+        /// <summary>
+        /// The API key for authenticating with LiteLLM
+        /// </summary>
+        [Output("apiKey")]
+        public Output<string?> ApiKey { get; private set; } = null!;
 
 
         /// <summary>
@@ -33,7 +39,7 @@ namespace Pulumi.Xyz
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
         public Provider(string name, ProviderArgs? args = null, CustomResourceOptions? options = null)
-            : base("xyz", name, args ?? new ProviderArgs(), MakeResourceOptions(options, ""))
+            : base("litellm", name, args ?? new ProviderArgs(), MakeResourceOptions(options, ""))
         {
         }
 
@@ -42,6 +48,11 @@ namespace Pulumi.Xyz
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                PluginDownloadURL = "github://api.github.com/brokenpip3/pulumi-litellm",
+                AdditionalSecretOutputs =
+                {
+                    "apiKey",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -53,16 +64,38 @@ namespace Pulumi.Xyz
         /// This function returns a Terraform config object with terraform-namecased keys,to be used with the Terraform Module Provider.
         /// </summary>
         public global::Pulumi.Output<ProviderTerraformConfigResult> TerraformConfig()
-            => global::Pulumi.Deployment.Instance.Call<ProviderTerraformConfigResult>("pulumi:providers:xyz/terraformConfig", CallArgs.Empty, this);
+            => global::Pulumi.Deployment.Instance.Call<ProviderTerraformConfigResult>("pulumi:providers:litellm/terraformConfig", CallArgs.Empty, this);
     }
 
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A region which should be used.
+        /// The base URL of the LiteLLM API
         /// </summary>
-        [Input("region", json: true)]
-        public Input<Pulumi.Xyz.Region.Region>? Region { get; set; }
+        [Input("apiBase")]
+        public Input<string>? ApiBase { get; set; }
+
+        [Input("apiKey")]
+        private Input<string>? _apiKey;
+
+        /// <summary>
+        /// The API key for authenticating with LiteLLM
+        /// </summary>
+        public Input<string>? ApiKey
+        {
+            get => _apiKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _apiKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// Skip TLS certificate verification. Only use for development or when using self-signed certificates
+        /// </summary>
+        [Input("insecureSkipVerify", json: true)]
+        public Input<bool>? InsecureSkipVerify { get; set; }
 
         public ProviderArgs()
         {

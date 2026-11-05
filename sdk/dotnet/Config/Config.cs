@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Immutable;
 
-namespace Pulumi.Xyz
+namespace Pulumi.Litellm
 {
     public static class Config
     {
@@ -30,16 +30,36 @@ namespace Pulumi.Xyz
             }
         }
 
-        private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("xyz");
+        private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("litellm");
 
-        private static readonly __Value<Pulumi.Xyz.Region.Region?> _region = new __Value<Pulumi.Xyz.Region.Region?>(() => __config.GetObject<Pulumi.Xyz.Region.Region>("region"));
+        private static readonly __Value<string?> _apiBase = new __Value<string?>(() => __config.Get("apiBase"));
         /// <summary>
-        /// A region which should be used.
+        /// The base URL of the LiteLLM API
         /// </summary>
-        public static Pulumi.Xyz.Region.Region? Region
+        public static string? ApiBase
         {
-            get => _region.Get();
-            set => _region.Set(value);
+            get => _apiBase.Get();
+            set => _apiBase.Set(value);
+        }
+
+        private static readonly __Value<string?> _apiKey = new __Value<string?>(() => __config.Get("apiKey"));
+        /// <summary>
+        /// The API key for authenticating with LiteLLM
+        /// </summary>
+        public static string? ApiKey
+        {
+            get => _apiKey.Get();
+            set => _apiKey.Set(value);
+        }
+
+        private static readonly __Value<bool?> _insecureSkipVerify = new __Value<bool?>(() => __config.GetBoolean("insecureSkipVerify"));
+        /// <summary>
+        /// Skip TLS certificate verification. Only use for development or when using self-signed certificates
+        /// </summary>
+        public static bool? InsecureSkipVerify
+        {
+            get => _insecureSkipVerify.Get();
+            set => _insecureSkipVerify.Set(value);
         }
 
     }

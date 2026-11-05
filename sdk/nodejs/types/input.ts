@@ -4,5 +4,54 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
-import * as enums from "../types/enums";
 
+export interface McpServerMcpInfo {
+    /**
+     * Description in MCP info.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Logo URL for the MCP server.
+     */
+    logoUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Cost information for MCP server tools
+     */
+    mcpServerCostInfo?: pulumi.Input<inputs.McpServerMcpInfoMcpServerCostInfo | undefined>;
+    /**
+     * Server name in MCP info.
+     */
+    serverName?: pulumi.Input<string | undefined>;
+}
+
+export interface McpServerMcpInfoMcpServerCostInfo {
+    /**
+     * Default cost per query for all tools.
+     */
+    defaultCostPerQuery?: pulumi.Input<number | undefined>;
+    /**
+     * Map of specific tool names to their cost per query.
+     */
+    toolNameToCostPerQuery?: pulumi.Input<{[key: string]: pulumi.Input<number>} | undefined>;
+}
+
+export interface OrganizationMemberAddMember {
+    role: pulumi.Input<string>;
+    userEmail?: pulumi.Input<string | undefined>;
+    userId?: pulumi.Input<string | undefined>;
+}
+
+export interface TeamMemberAddMember {
+    /**
+     * The role of the user in the team. Must be one of: "admin" or "user".
+     */
+    role: pulumi.Input<string>;
+    /**
+     * The email of the user to add to the team.
+     */
+    userEmail?: pulumi.Input<string | undefined>;
+    /**
+     * The ID of the user to add to the team.
+     */
+    userId?: pulumi.Input<string | undefined>;
+}

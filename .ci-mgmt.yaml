@@ -1,11 +1,11 @@
 # REQUIRED: provider is the name of the provider without the pulumi-prefix e.g. "aws".
-provider: xyz
+provider: litellm
 # The name of the GitHub organization or username the repository lives in. Defaults to 'pulumi'
-organization: pulumi
+organization: brokenpip3
 # The external template only includes workflows relevant for non-Pulumi managed providers.
 template: external-bridged-provider
 # The name of the GitHub organisation or username where the upstream terraform provider lives.
-upstreamProviderOrg: pulumi
+upstreamProviderOrg: BerriAI
 # major version of the current provider - used in make files
 # This should always be set by all providers as this is key to go module paths.
 major-version: 1
@@ -31,8 +31,3 @@ publish:
 
 # Disables a pulumi-internal-only step for running create_docs_build during the release
 publishRegistry: false
-
-# Enables ESC for CI secrets. Optional.
-esc:
-    enabled: true
-    environment: imports/github-secrets

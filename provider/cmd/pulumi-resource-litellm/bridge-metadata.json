@@ -1,0 +1,614 @@
+{
+    "auto-aliasing": {
+        "resources": {
+            "litellm_access_group": {
+                "current": "litellm:index/accessGroup:AccessGroup",
+                "fields": {
+                    "model_ids": {
+                        "maxItemsOne": false
+                    },
+                    "model_names": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_agent": {
+                "current": "litellm:index/agent:Agent",
+                "fields": {
+                    "extra_headers": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_budget": {
+                "current": "litellm:index/budget:Budget"
+            },
+            "litellm_credential": {
+                "current": "litellm:index/credential:Credential"
+            },
+            "litellm_fallback": {
+                "current": "litellm:index/fallback:Fallback",
+                "fields": {
+                    "fallback_models": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_guardrail": {
+                "current": "litellm:index/guardrail:Guardrail"
+            },
+            "litellm_jwt_key_mapping": {
+                "current": "litellm:index/jwtKeyMapping:JwtKeyMapping"
+            },
+            "litellm_key": {
+                "current": "litellm:index/key:Key",
+                "fields": {
+                    "allowed_cache_controls": {
+                        "maxItemsOne": false
+                    },
+                    "allowed_passthrough_routes": {
+                        "maxItemsOne": false
+                    },
+                    "allowed_routes": {
+                        "maxItemsOne": false
+                    },
+                    "enforced_params": {
+                        "maxItemsOne": false
+                    },
+                    "guardrails": {
+                        "maxItemsOne": false
+                    },
+                    "models": {
+                        "maxItemsOne": false
+                    },
+                    "prompts": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_key_block": {
+                "current": "litellm:index/keyBlock:KeyBlock"
+            },
+            "litellm_mcp_server": {
+                "current": "litellm:index/mcpServer:McpServer",
+                "fields": {
+                    "args": {
+                        "maxItemsOne": false
+                    },
+                    "mcp_access_groups": {
+                        "maxItemsOne": false
+                    },
+                    "mcp_info": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "mcp_server_cost_info": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "litellm_model": {
+                "current": "litellm:index/model:Model"
+            },
+            "litellm_organization": {
+                "current": "litellm:index/organization:Organization",
+                "fields": {
+                    "models": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_organization_member": {
+                "current": "litellm:index/organizationMember:OrganizationMember"
+            },
+            "litellm_organization_member_add": {
+                "current": "litellm:index/organizationMemberAdd:OrganizationMemberAdd",
+                "fields": {
+                    "member": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_project": {
+                "current": "litellm:index/project:Project",
+                "fields": {
+                    "models": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_prompt": {
+                "current": "litellm:index/prompt:Prompt"
+            },
+            "litellm_search_tool": {
+                "current": "litellm:index/searchTool:SearchTool"
+            },
+            "litellm_tag": {
+                "current": "litellm:index/tag:Tag",
+                "fields": {
+                    "models": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_team": {
+                "current": "litellm:index/team:Team",
+                "fields": {
+                    "allowed_passthrough_routes": {
+                        "maxItemsOne": false
+                    },
+                    "guardrails": {
+                        "maxItemsOne": false
+                    },
+                    "models": {
+                        "maxItemsOne": false
+                    },
+                    "prompts": {
+                        "maxItemsOne": false
+                    },
+                    "soft_budget_alerting_emails": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "team_member_permissions": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_team_block": {
+                "current": "litellm:index/teamBlock:TeamBlock"
+            },
+            "litellm_team_member": {
+                "current": "litellm:index/teamMember:TeamMember"
+            },
+            "litellm_team_member_add": {
+                "current": "litellm:index/teamMemberAdd:TeamMemberAdd",
+                "fields": {
+                    "allowed_models": {
+                        "maxItemsOne": false
+                    },
+                    "member": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_unified_access_group": {
+                "current": "litellm:index/unifiedAccessGroup:UnifiedAccessGroup",
+                "fields": {
+                    "access_agent_ids": {
+                        "maxItemsOne": false
+                    },
+                    "access_mcp_server_ids": {
+                        "maxItemsOne": false
+                    },
+                    "access_model_names": {
+                        "maxItemsOne": false
+                    },
+                    "assigned_key_ids": {
+                        "maxItemsOne": false
+                    },
+                    "assigned_team_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_user": {
+                "current": "litellm:index/user:User",
+                "fields": {
+                    "guardrails": {
+                        "maxItemsOne": false
+                    },
+                    "models": {
+                        "maxItemsOne": false
+                    },
+                    "teams": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_vector_store": {
+                "current": "litellm:index/vectorStore:VectorStore"
+            }
+        },
+        "datasources": {
+            "litellm_access_group": {
+                "current": "litellm:index/getAccessGroup:getAccessGroup",
+                "fields": {
+                    "model_names": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_access_groups": {
+                "current": "litellm:index/getAccessGroups:getAccessGroups",
+                "fields": {
+                    "access_groups": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "model_names": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_agent": {
+                "current": "litellm:index/getAgent:getAgent",
+                "fields": {
+                    "extra_headers": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_agents": {
+                "current": "litellm:index/getAgents:getAgents",
+                "fields": {
+                    "agents": {
+                        "maxItemsOne": false
+                    },
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_budget": {
+                "current": "litellm:index/getBudget:getBudget"
+            },
+            "litellm_budgets": {
+                "current": "litellm:index/getBudgets:getBudgets",
+                "fields": {
+                    "budgets": {
+                        "maxItemsOne": false
+                    },
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_credential": {
+                "current": "litellm:index/getCredential:getCredential"
+            },
+            "litellm_fallback": {
+                "current": "litellm:index/getFallback:getFallback",
+                "fields": {
+                    "fallback_models": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_guardrail": {
+                "current": "litellm:index/getGuardrail:getGuardrail"
+            },
+            "litellm_guardrails": {
+                "current": "litellm:index/getGuardrails:getGuardrails",
+                "fields": {
+                    "guardrails": {
+                        "maxItemsOne": false
+                    },
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_key": {
+                "current": "litellm:index/getKey:getKey",
+                "fields": {
+                    "models": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_keys": {
+                "current": "litellm:index/getKeys:getKeys",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    },
+                    "keys": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "models": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "litellm_mcp_server": {
+                "current": "litellm:index/getMcpServer:getMcpServer",
+                "fields": {
+                    "allowed_tools": {
+                        "maxItemsOne": false
+                    },
+                    "args": {
+                        "maxItemsOne": false
+                    },
+                    "extra_headers": {
+                        "maxItemsOne": false
+                    },
+                    "mcp_access_groups": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_mcp_servers": {
+                "current": "litellm:index/getMcpServers:getMcpServers",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    },
+                    "mcp_servers": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_model": {
+                "current": "litellm:index/getModel:getModel"
+            },
+            "litellm_models": {
+                "current": "litellm:index/getModels:getModels",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    },
+                    "models": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_organization": {
+                "current": "litellm:index/getOrganization:getOrganization",
+                "fields": {
+                    "models": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_organizations": {
+                "current": "litellm:index/getOrganizations:getOrganizations",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    },
+                    "organizations": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "models": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "litellm_project": {
+                "current": "litellm:index/getProject:getProject",
+                "fields": {
+                    "models": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_projects": {
+                "current": "litellm:index/getProjects:getProjects",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    },
+                    "projects": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "models": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "litellm_prompt": {
+                "current": "litellm:index/getPrompt:getPrompt",
+                "fields": {
+                    "environments": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_prompts": {
+                "current": "litellm:index/getPrompts:getPrompts",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    },
+                    "prompts": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_search_tool": {
+                "current": "litellm:index/getSearchTool:getSearchTool"
+            },
+            "litellm_search_tools": {
+                "current": "litellm:index/getSearchTools:getSearchTools",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    },
+                    "search_tools": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_tag": {
+                "current": "litellm:index/getTag:getTag",
+                "fields": {
+                    "models": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_tags": {
+                "current": "litellm:index/getTags:getTags",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "models": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "litellm_team": {
+                "current": "litellm:index/getTeam:getTeam",
+                "fields": {
+                    "models": {
+                        "maxItemsOne": false
+                    },
+                    "soft_budget_alerting_emails": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "team_member_permissions": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_teams": {
+                "current": "litellm:index/getTeams:getTeams",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    },
+                    "teams": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "models": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "litellm_unified_access_group": {
+                "current": "litellm:index/getUnifiedAccessGroup:getUnifiedAccessGroup",
+                "fields": {
+                    "access_agent_ids": {
+                        "maxItemsOne": false
+                    },
+                    "access_mcp_server_ids": {
+                        "maxItemsOne": false
+                    },
+                    "access_model_names": {
+                        "maxItemsOne": false
+                    },
+                    "assigned_key_ids": {
+                        "maxItemsOne": false
+                    },
+                    "assigned_team_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_unified_access_groups": {
+                "current": "litellm:index/getUnifiedAccessGroups:getUnifiedAccessGroups",
+                "fields": {
+                    "access_groups": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "access_agent_ids": {
+                                    "maxItemsOne": false
+                                },
+                                "access_mcp_server_ids": {
+                                    "maxItemsOne": false
+                                },
+                                "access_model_names": {
+                                    "maxItemsOne": false
+                                },
+                                "assigned_key_ids": {
+                                    "maxItemsOne": false
+                                },
+                                "assigned_team_ids": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_user": {
+                "current": "litellm:index/getUser:getUser",
+                "fields": {
+                    "models": {
+                        "maxItemsOne": false
+                    },
+                    "teams": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "litellm_users": {
+                "current": "litellm:index/getUsers:getUsers",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    },
+                    "users": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "models": {
+                                    "maxItemsOne": false
+                                },
+                                "teams": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "litellm_vector_store": {
+                "current": "litellm:index/getVectorStore:getVectorStore"
+            }
+        }
+    },
+    "auto-settings": {}
+}

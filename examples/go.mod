@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-xyz/examples
+module github.com/brokenpip3/pulumi-litellm/examples
 
 go 1.26.6
 

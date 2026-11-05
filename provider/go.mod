@@ -1,12 +1,13 @@
-module github.com/pulumi/pulumi-xyz/provider
+module github.com/brokenpip3/pulumi-litellm/provider
 
 go 1.26.10
 
 require (
+	github.com/BerriAI/terraform-provider-litellm v0.0.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.143.0
-	github.com/pulumi/pulumi/pkg/v3 v3.274.0
-	github.com/pulumi/terraform-provider-xyz v0.0.3
 )
+
+replace github.com/BerriAI/terraform-provider-litellm => ../upstream
 
 require (
 	cel.dev/expr v0.25.3 // indirect
@@ -161,6 +162,7 @@ require (
 	github.com/pulumi/pulumi-hcl v0.19.1 // indirect
 	github.com/pulumi/pulumi-java v1.39.0 // indirect
 	github.com/pulumi/pulumi-yaml v1.38.16 // indirect
+	github.com/pulumi/pulumi/pkg/v3 v3.274.0 // indirect
 	github.com/pulumi/pulumi/sdk/v3 v3.274.0 // indirect
 	github.com/pulumi/terraform-diff-reader v0.0.2 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect

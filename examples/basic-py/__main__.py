@@ -13,6 +13,15 @@
 # limitations under the License.
 
 import pulumi
-import pulumi_xyz
+import pulumi_litellm
 
-resource = pulumi_xyz.Resource("Resource", sample_attribute = "attr")
+config = pulumi.Config()
+model = pulumi_litellm.Model(
+    "model",
+    model_name="gpt-4o",
+    custom_llm_provider="openai",
+    base_model="gpt-4o",
+    model_api_key=config.require_secret("openaiApiKey"),
+)
+
+pulumi.export("modelId", model.id)
