@@ -31,3 +31,8 @@ publish:
 
 # Disables a pulumi-internal-only step for running create_docs_build during the release
 publishRegistry: false
+
+# CI workflows are repository-owned: preserve native-token auth, Linux runners,
+# disabled SDK publishing, and no repository_dispatch triggers when regenerating.
+esc:
+    enabled: false
