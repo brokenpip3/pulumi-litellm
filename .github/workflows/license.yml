@@ -41,10 +41,10 @@ jobs:
       - name: Install project dependencies
         run: mise deps install
       - run: make prepare_local_workspace
-        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: pulumi/license-check-action@main
+        continue-on-error: true
         with:
           module-path: provider
           ignore-modules: >-
